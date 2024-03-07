@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML/CSS Studio</title>
+    <!-- import CSS styles -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <!-- page content goes into <body> -->
+  <body>
+    <div id="widthContainer">
+      <h1>Responsive Redesign</h1>
+      <h2>Overview</h2>
+      <p>
+        This is a redesign project in which I attempted to improve the usability
+        and accessibility of an existing interface. I started by sketching and
+        wireframing to address the major usability issues in the layout. Then, I
+        made a visual style guide and high fidelity mockup to finalize the style
+        of the new design before finally implementing the page.
+      </p>
+
+      <h2>Original Page</h2>
+
+      <div class="imgContainer scrollable">
+        <img class="screenshot" src="assets/esp-page.png" alt="original East Side Pockets ordering page"></img>
+      </div>
+      <p>
+        The interface I chose is the ordering page of the restaurant East Side
+        Pockets. I chose this website because the interactive elements were not
+        intuitive to use in comparison to other restaurant ordering pages, and
+        there were alignment and spacing issues that I felt could be addressed
+        in a more responsive design. (Note: The image above doesn't capture the entire page because it's too large. To view the original website, visit
+        <a class="bold" href="https://www.ediningexpress.com/live20/617/1130/">
+          East Side Pockets Online Ordering Page
+        </a>
+        )
+      </p>
+
+      <hr/>
+      <h2>Identifying Usability Problems</h2>
+      <h3>Usability Issues</h3>
+      <ul>
+        <li>
+          <p>
+            <span class="bold">Poor affordances / learnability:</span> Some buttons in the banner don’t
+            seem clickable and just look like images, so banner might get
+            ignored completely. Order receipt looks like it could be a button
+            but is not. At a glance, menu seems more like plain text than an
+            interactive page.
+          </p>
+        </li>
+        <li>
+          <p>
+            <span class="bold">Not fully responsive: </span>The nav bar disappears for small screens and
+            some of the text in the nav bar gets pushed off as the screen gets
+            smaller. The order function doesn't show up on smaller screens if
+            you don't already have something in the cart.
+          </p>
+        </li>
+        <li>
+          <p>
+            <span class="bold">Alignment / spacing: </span>Menu images interfere with left alignment of
+            text. Some images are big enough to take up the whole screen. There
+            is a lot of unused space on right side when the order is empty.
+          </p>
+        </li>
+        <li>
+          <p>
+            <span class="bold">Inefficiency:</span> When the order receipt gets too large, the button to
+            order and some of the food items get cut off and you can't scroll
+            the receipt without scrolling to the top or bottom of the page.
+            Images need to be clicked on separately from the menu item to be
+            seen more clearly. You can't navigate between sections without going
+            to the top first.
+          </p>
+        </li>
+        <li>
+          <p>
+            <span class="bold">Memorability:</span> Too many redirection links in the banner and nav bar
+            may make it difficult for the user to remember where they should go
+            or which link they should use to get there. Inconsistency with hover effects may make the user forget what is clickable, especially for different links in the footer. 
+          </p>
+        </li>
+      </ul>
+
+      <h3>Accessibility Issues</h3>
+      <ul>
+        <p>
+          After analyzing the page using WebAIM WAVE, I found that the page is
+          not very accessible to users with vision impairments. I agree with the
+          problems identified because most of the issues are objective issues
+          that would cause problems for assitive technologies. Here are some of
+          the issues I found:
+        </p>
+        <li>
+          <p>
+            The text contrast is too low because the shade of green is too light
+            for a white background.
+          </p>
+        </li>
+        <li>
+          <p>
+            The language of the document is not identified so screen readers
+            can't read the page in the correct language.
+          </p>
+        </li>
+        <li>
+          <p>
+            There are no aria labels, and some images are missing alternative
+            text, so images and icons wouldn’t be read out loud.
+          </p>
+        </li>
+        <li>
+          <p>
+            There is no heading structure, which creates navigation issues for
+            assitive technologies.
+          </p>
+        </li>
+        <li>
+          <p>
+            Some of the dropdown menus require a click and aren’t accessible
+            through the keyboard, which creates problems for those with mobility
+            impairments.
+          </p>
+        </li>
+      </ul>
+
+      <hr/>
+      <h2>Visual Redesign</h2>
+      <h3>Sketches</h3>
+      <p>
+        I made 9 sketches <span class="bold">(left image)</span> to brainstorm new designs for the page. Afterwards, I combined the different ideas into one final sketch <span class="bold">(right image)</span>, which had some of my favorite components, like a banner with dropdown buttons, a two-column display, clickable cards with images, vertical scrolling, and a footer with navigation links. I drew the sketches in a vertical orientation to fit the full screen.
+      </p>
+      <div class="gridContainer">
+        <img class="screenshot" src="assets/speed-sketches.jpg" />
+        <img class="screenshot" src="assets/final-sketch.jpg" alt="finalized sketch of design"/>
+      </div>
+      <h3 class="spacing">Low-Fidelity Wireframes</h3>
+      <p>I used my final sketch as the foundation for my wireframes, which demonstrate the new layout for Desktop View <span class="bold">(top page)</span>, Tablet View <span class="bold">(middle page)</span>, and Phone View <span class="bold">(bottom page)</span>. I addressed the usability issues in my annotations, which can be read below. Some of the key fixes were addressing accessibility issues like the lack of heading structure, and usability issues like poor affordances and misalignment. I addressed the poor affordances issue by making interactive components more obvious to the user, and spacing issues by reorganizing the placement of content.</p>
+      <div class="imgContainer">
+        <iframe class="screenshot" style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FvnJB0pTxs6QwimnI5oKq2N%2FEast-Side-Pockets-Redesign%3Ftype%3Ddesign%26node-id%3D0%253A1%26mode%3Ddesign%26t%3Dos3E3ln5Ky8ghUHU-1" allowfullscreen></iframe>
+      </div>
+      <div class="imgContainer">
+        <iframe class="screenshot" style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FvnJB0pTxs6QwimnI5oKq2N%2FEast-Side-Pockets-Redesign%3Ftype%3Ddesign%26node-id%3D3%253A6%26mode%3Ddesign%26t%3D8ZfLeAirfwvOkmb1-1" allowfullscreen></iframe>
+      </div>
+      <div class="imgContainer">
+        <iframe class="screenshot" style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FvnJB0pTxs6QwimnI5oKq2N%2FEast-Side-Pockets-Redesign%3Ftype%3Ddesign%26node-id%3D3%253A10%26mode%3Ddesign%26t%3D8ZfLeAirfwvOkmb1-1" allowfullscreen></iframe>
+      </div>
+      <h3>Visual Style Guide</h3>
+      <p>
+        I made a style guide that I thought would fit the restaurant's brand, and chose to stick to similar colors as the original website to stay on theme. I chose a simpler font so that it would not be too distracting, especially since I chose some bright colors. I also made sure to include hoverable components to ensure consistency in the hover effects.
+      </p>
+      <div class="imgContainer">
+        <img class="screenshot" src="assets/visual-style-guide.png" alt="visual style guide showing color palette, typography, UI elements, and icons"/>
+      </div>
+      <h3>High-Fidelity Mockups</h3>
+      <p>I then moved on to my high-fidelity mockups, using the styling choices in my style guide to build on my wireframes and make a more realistic prototype of the final page. Below are the mockups for Desktop View <span class="bold">(top page)</span>, Tablet View <span class="bold">(middle page)</span>, and Phone View <span class="bold">(bottom page)</span>.</p>
+
+      <div class="imgContainer">
+        <iframe class="screenshot" style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FvnJB0pTxs6QwimnI5oKq2N%2FEast-Side-Pockets-Redesign%3Ftype%3Ddesign%26node-id%3D144%253A263%26mode%3Ddesign%26t%3DzigHC7WMhmzDkUF1-1" allowfullscreen></iframe>
+      </div>
+
+      <div class="imgContainer">
+       <iframe class="screenshot" style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FvnJB0pTxs6QwimnI5oKq2N%2FEast-Side-Pockets-Redesign%3Ftype%3Ddesign%26node-id%3D145%253A267%26mode%3Ddesign%26t%3DzigHC7WMhmzDkUF1-1" allowfullscreen></iframe>
+      </div>
+
+      <div class="imgContainer">
+        <iframe class="screenshot" style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FvnJB0pTxs6QwimnI5oKq2N%2FEast-Side-Pockets-Redesign%3Ftype%3Ddesign%26node-id%3D172%253A101%26mode%3Ddesign%26t%3DzigHC7WMhmzDkUF1-1" allowfullscreen></iframe>
+      </div>
+
+      <hr/>
+      <h2>Implementation</h2>
+        <p>Here is the final page that I implemented using HTML and CSS. To view the full page (including the footer), scroll on the image.</p>
+        <div class="imgContainer scrollable">
+          <img class="screenshot" src="assets/new-esp-page.png" alt="redesigned East Side Pockets page"/>
+        </div>
+        <p>Alternatively, you can directly visit the page at: <a href="https://pnguyen37.github.io/responsive-redesign/" class="bold">New East Side Pockets Online Ordering Page</a></p>
+
+      <hr/>
+      <h2>Takeaways</h2>
+      <p>
+        After going through this redesign process, I learned that there are a
+        lot of factors to consider when choosing a design. For example, I had to
+        think about components that would be accessible, have good affordances,
+        follow convention, and also have a consistent and clean style. Convention in particular was tricky because when I was brainstorming design ideas, it was hard to come up with original ways to display menus when the two-column format is so widely recognized. I also learned how important testing is, especially when testing for accessibility, because to improve the page I needed to consider different users and how they might interact with the page. Overall, it was a good learning experience and I liked the iterative nature of
+        the design process.
+      </p>
+    </div>
+  </body>
+</html>
